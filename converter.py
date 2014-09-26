@@ -8,7 +8,12 @@ an Arabic number to RMB.
 
 __author__ = 'YouYongsong'
 
+import os
+import logging
 import re
+
+logging.basicConfig(filename = os.path.join(os.getcwd(), 'log.txt'), 
+                    level = logging.WARNING)
 
 # 将整数部分每4位数为1个列表分切割为3个字符列表
 # 950356721 => (['0', '0', '0', '9'],
@@ -37,9 +42,15 @@ def convert(num):
     intStr = _dealIntZeros(_makeIntStr())
     demStr = _makeDemStr()
     if _isDemical():
-        return intStr + u'圆' + demStr
+        if intStr:
+            return intStr + u'圆' + demStr
+        else:
+            return demStr
     else:
-        return intStr + u'圆整'
+        if intStr:
+            return intStr + u'圆整'
+        else:
+            return u'零圆整'
 
 # 将阿拉伯数字转换为字符串后，再将对应的字符填入_integer和_demical中
 def _divideNum(num):
@@ -49,7 +60,7 @@ def _divideNum(num):
     '''
     if not (isinstance(num, int) or isinstance(num, float)):
         raise TypeError('num should be a int or float')
-    if num <= 0 or num - 1e9 > 0:
+    if num < 0 or num - 1e9 > 0:
         raise ValueError('num value should be 1~1e9')
 
     strNum = '%015.2f' % num
@@ -124,16 +135,31 @@ def _makeDemStr():
 
 
 if __name__ == '__main__':
-    test1 = 10000100
-    test2 = 1
-    test3 = 10000000
-    test4 = 30324003.34234
-    test5 = 'asdad'  # 非法类型
-    test6 = -9  # 非范围内数据
-    print convert(test1).encode('utf-8')
-    print convert(test2).encode('utf-8')
-    print convert(test3).encode('utf-8')
-    print convert(test4).encode('utf-8')
-    #print convert(test3).encode('utf-8')
-    #print convert(test4).encode('utf-8')
+    # 整数
+    test1 = 0
+    test2 = 123
+    test3 = 4560789
+    test4 = 578090123
+    # 小数
+    test5 = 0.23
+    test6 = 123.789
+    test7 = 30476.01
+    test8 = 30476.10
+    # 非法字符
+    test9 = 'abcd'
+    test10 = '1234'
+    # 非范围内的数字
+    test11 = -1
+    test12 = 1000000001
+
+    test = (test1, test2, test3, test4, test5, test6,
+            test7, test8, test9, test10, test11, test12)
+    for case in test:
+        try:
+            result = convert(case).encode('utf-8')
+            print '%13r : %s' % (case, result)
+        except ValueError, e:
+            logging.exception(e)
+        except TypeError, e:
+            logging.exception(e)
 

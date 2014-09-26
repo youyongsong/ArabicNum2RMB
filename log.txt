@@ -1,0 +1,36 @@
+ERROR:root:num should be a int or float
+Traceback (most recent call last):
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 159, in <module>
+    result = convert(case).encode('utf-8')
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 41, in convert
+    _divideNum(num)
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 62, in _divideNum
+    raise TypeError('num should be a int or float')
+TypeError: num should be a int or float
+ERROR:root:num should be a int or float
+Traceback (most recent call last):
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 159, in <module>
+    result = convert(case).encode('utf-8')
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 41, in convert
+    _divideNum(num)
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 62, in _divideNum
+    raise TypeError('num should be a int or float')
+TypeError: num should be a int or float
+ERROR:root:num value should be 1~1e9
+Traceback (most recent call last):
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 159, in <module>
+    result = convert(case).encode('utf-8')
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 41, in convert
+    _divideNum(num)
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 64, in _divideNum
+    raise ValueError('num value should be 1~1e9')
+ValueError: num value should be 1~1e9
+ERROR:root:num value should be 1~1e9
+Traceback (most recent call last):
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 159, in <module>
+    result = convert(case).encode('utf-8')
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 41, in convert
+    _divideNum(num)
+  File "/Users/youyongsong/Documents/workspace/Github/ArabicNum2RMB/converter.py", line 64, in _divideNum
+    raise ValueError('num value should be 1~1e9')
+ValueError: num value should be 1~1e9

@@ -55,3 +55,15 @@
 返回 整数部分+'圆整'。    
 - 小数部分不为空    
 返回 整数部分+'圆'+小数部分。
+
+## 测试    
+- 合法测试结果    
+![valid-tests](http://youyongsong-blog.qiniudn.com/convert_test.png)     
+- 非法测试结果
+
+  |  测试样例  |  异常类型  |
+  |:----------:|:----------:|
+  |     -1     | ValueError |
+  | 1000000001 | ValueError |
+  |   'abcd'   |  TypeError |
+  |   '1234'   |  TypeError |
