@@ -1,0 +1,31 @@
+topic = {
+    'identity': str,    # topic id
+    'creator': {
+        'create_userid': str,
+        'create_username': str,
+    }
+    'title': str,
+    'created': str,
+    'last_update': str,
+    'top': bool,
+    'comments': {
+        'count': int,
+        'detail': {    # need_comments_detail
+            'identity': str,
+            'content': str,
+            'user_id': str,
+            'username': str,
+            'created': str,
+        },
+    },
+    'content': str,    # with_content
+    'image_uri': img_dict,    # with_content
+    'content_append': {    # with_content
+        {'content': str,
+         'created': str,
+         'image_uri': img_dict}
+    }
+    'group': group_dict,    # with_group
+    'likes_users': user_dict,    # with_likes_users
+    'pets': pet_dict,    # with_pets
+}

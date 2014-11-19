@@ -1,0 +1,6 @@
+recent_join = {
+    'identity': str(user_id),
+    'username': str,
+    'avatar': img_dict,
+    'join_time': str,
+}

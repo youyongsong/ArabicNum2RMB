@@ -1,0 +1,7 @@
+comment = {
+    'identity': str,
+    'content': str,
+    'user_id': str,
+    'username': str,
+    'created': str,
+}

@@ -1,0 +1,21 @@
+group = {
+    ‘identity’: str,    # group id
+    'group_name': str,
+    'summary': str,
+    'description': str,
+    'logo_uri': img_dict,
+    'created': str,
+    'last_update': str,
+    'group_type': str,    # ['私密', '公开']
+    'members': {
+        'count': int,
+        'detail': [user_dict]    # need_members_detail
+    },
+    'creator': {
+        'create_userid': str,
+        'create_username': str,
+    },
+    'hot': bool,
+    'managers': [user_dict]    # with_managers 
+    'topics': [topic_dict]    # need_topics
+}
