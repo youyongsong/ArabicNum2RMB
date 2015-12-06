@@ -63,7 +63,7 @@ def _divideNum(num):
     if num < 0 or num - 1e9 > 0:
         raise ValueError('num value should be 1~1e9')
 
-    strNum = '%015.2f' % num
+    strNum = '{0:015.2f}'.format(num)
 
     # 填写_integer
     for i in range(3):
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     for case in test:
         try:
             result = convert(case).encode('utf-8')
-            print '%13r : %s' % (case, result)
+            print '{0:13!r} : {1!s}'.format(case, result)
         except ValueError, e:
             logging.exception(e)
         except TypeError, e:
